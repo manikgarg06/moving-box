@@ -15,8 +15,8 @@
 
 .Fence {
   border: 2px solid #61dafb;
-  width: 98%;
-  height: 80%;
+  width: 1200px;
+  height: 650px;
 }
 .Button {
   /* background-color: #DAD735; */
@@ -33,7 +33,7 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
-  height: 600px;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
