@@ -13,9 +13,28 @@
   }
 }
 
+.Fence {
+  border: 2px solid #61dafb;
+  width: 98%;
+  height: 80%;
+}
+.Button {
+  /* background-color: #DAD735; */
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #282c34;
+    color: #282c34;
+    font-family: inherit;
+    margin: auto;
+    font-size: 1.0em;
+    padding: 5px 10px;
+    box-shadow: 2px 2px 2px #61dafb;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
+  height: 600px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,7 +42,13 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.Box {
+  border: 1px solid #d46c1794;
+  width: 10%;
+  position: absolute;
+  height: 10%;
+  margin : 5px;
+}
 .App-link {
   color: #61dafb;
 }
