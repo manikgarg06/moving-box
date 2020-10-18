@@ -9,7 +9,14 @@ function App() {
   const fenceRef = useRef();
 
   const addBoxHandler = () => {
-    if(fenceRef.current.style.left < 1170){
+    const element = document.getElementById("fence");
+    const lastElement = document.getElementById("fence").lastChild;
+    if(lastElement !== null && element.getBoundingClientRect().width > lastElement.getBoundingClientRect().x + 30){
+      setBoxes(prevBoxes => prevBoxes.concat({ id: Math.random(), zIndex: counter + 1 }))
+      setCounter(prevCounter => prevCounter + 1);
+      return ;
+    }
+    if(lastElement === null){
       setBoxes(prevBoxes => prevBoxes.concat({ id: Math.random(), zIndex: counter + 1 }))
       setCounter(prevCounter => prevCounter + 1);
     }
@@ -63,13 +70,10 @@ function App() {
           break;
       }
     }
-    // console.log(event.keyCode)
-    // console.log(event.key)
   }
-  console.log(fenceRef)
   return (
     <div className="App-header">
-      <div className="Fence" ref={fenceRef} >
+      <div className="Fence" ref={fenceRef} id="fence" >
         {boxes.map(box => {
           return (<div className="Box" id={box.id} onClick={() => handleSelectedBox(box)} style={{
             backgroundColor: 'white', zIndex: box.zIndex, top: fenceRef.current.offsetTop + 5 * (box.zIndex - 1),
